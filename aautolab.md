@@ -24,7 +24,7 @@ Com todos os instrumentos conectados, clique em "Iniciar Automação". Todos os 
 
 Após finalizada, você poderá transferir as leituras para o Autolab clicando em "Enviar". A janela do Autolab da faixa calibrada deverá estar aberta.
 
-![Enviar Dados](./imgs/enviar_dados.png)
+![Enviar Dados](./imgs/enviar_dados.gif)
 
 Não é necessário selecionas as faixa no AAutolab, pois o software sabe quais os dados a serem transferidos pelas informações que ele obtém no Autolab. Ao definir o número de faixas, o software irá repetir o processo de transferência para as faixas seguintes.
 
