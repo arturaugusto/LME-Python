@@ -1,8 +1,8 @@
-# Projeto: Desenvolvendo um software de calibração
+# Projeto: Desenvolvendo um software de automação
 
 ## Objetivos do projeto
 
-Com conceitos básicos apresentado da linguagem `Python` e com informações complementares sobre interfaces e arquiteturas de comunicação utilizadas nas automações, estaremos aptos a desenvolver uma software modular para automação de instrumentos.
+Com conceitos básicos apresentado da linguagem Python e com informações complementares sobre interfaces e arquiteturas de comunicação utilizadas nas automações, estaremos aptos a desenvolver uma software modular para automação de instrumentos.
 
 A proposta é conceber a estrutura básica de um sistema, com a finalidade entender como e porque devemos abstrair parte do código para que este seja mais reutilizável, apresentando de forma didática os conceitos aplicados em outros projetos de automação para que estes possam ser melhor utilizados e expandidos.
 
@@ -61,7 +61,7 @@ Algumas configurações adicionais sobre como serão realizadas estas operação
 * "EOS Byte" é um número entre 0 e 255 que corresponde ao caractere da tabela ASCII a ser utilizado como `EOS`.
 
 O caractere mais utilizados como `EOS` é o caractere de nova lina, cujo número decimal correspondente na tabela ASCII é 10.
-O caractere de nova linha é um tipo de caractere não imprimível, que representa quando devemos ir para a próxima linha em um texto. Na linguagem `Python` este caractere é representado pelo código `\n`.
+O caractere de nova linha é um tipo de caractere não imprimível, que representa quando devemos ir para a próxima linha em um texto. Na linguagem Python este caractere é representado pelo código `\n`.
 
 Para alguns instrumentos antigos (caso do multímetro 3458A), é necessário definir o `EOS` em 10 e selecionar a opção "Terminate Read on EOS".
 
@@ -70,9 +70,9 @@ Para alguns instrumentos antigos (caso do multímetro 3458A), é necessário def
 
 Virtual Instrument Software Architecture (`VISA`) é um padrão utilizado para que diversos tipos de interfaces de comunicação possam utilizar uma mesma interface de programação. Entre diversas vantagens, tal interface permite que um mesmo código possa ser utilizado para um instrumento que `GPIB` e `RS232`. 
 
-Podemos utilizar esta arquitetura através de um pacota para o `Python` chamado `PyVISA`. Para instalar o pacote no `Python` do seu computador, abra o `WinPython Command Prompt.exe` e execute o comando: ```pip install pyvisa```.
+Podemos utilizar esta arquitetura através de um pacota para o Python chamado `PyVISA`. Para instalar o pacote no Python do seu computador, abra o `WinPython Command Prompt.exe` e execute o comando: ```pip install pyvisa```.
 
-Agora vamos testar o uso da do `VISA` através do `Python`. Execute o seguinte código:
+Agora vamos testar o uso da do `VISA` através do Python. Execute o seguinte código:
 
 ```Python
 import visa
@@ -105,7 +105,7 @@ dmm.query('*IDN?')
 Out[16]: 'Keysight Technologies,34465A,MY57500288,A.02.14-02.40-02.14-00.49-03-01\n'
 ```
 
-Fizemos através do `Python` o mesmo que foi feito utilizando `NI-MAX`.
+Fizemos através do Python o mesmo que foi feito utilizando `NI-MAX`.
 
 O comando `rm = visa.ResourceManager()` retorna para `rm` um objeto. Este objeto permite manipular as interfaces disponíveis.
 
@@ -141,7 +141,7 @@ Keysight 34465A
 
 > Para testar os comandos através da automação é recomendável que *input* do medidor e *output* da fonte estejam inicialmente desconectados, evitando que possíveis bugs possam resultar em um controle incorreto dos instrumentos.
 
-Tente executar os comandos mostrados na tabela através do `MAX`. Em seguida abra um editor de código de sua escolha (eu utilizei o Pyzo) e faça um pequeno programa para controlar o multímetro utilizando `Python`. Exemplo:
+Tente executar os comandos mostrados na tabela através do `MAX`. Em seguida abra um editor de código de sua escolha (eu utilizei o Pyzo) e faça um pequeno programa para controlar o multímetro utilizando Python. Exemplo:
 
 
 ```Python
@@ -328,9 +328,9 @@ Este código apresenta algumas novidades:
 
 * Na primeira linha foi utilizado o comando `from` em conjunto com o `import` para importar as definições de classe dos instrumentos no módulo `driver` que nós criamos. O comando `from` é utilizado para que possamos ser mais específicos, informando o que exatamente deve ser importado do módulo `drivers`. 
 
-* A função da linha onde está escrito `if __name__ == '__main__':`, de forma simplista, significa: "Se for este o arquivo que está sendo executado, execute o código a seguir", executando na sequência a função `main()`, que é onde colocamos toda a lógica do nosso programa. Se este arquivo estivesse sendo importado por algum outro programa, a comparação `__name__ == '__main__'` resultaria em `False` e a função `main()` não seria executada.
+* A função da linha onde está escrito `if __name__ == '__main__':`, de forma simplista, significa: "Se o arquivo principal sendo executado é este, execute o código a seguir", executando na sequência a função `main()`, que é onde colocamos toda a lógica do nosso programa. Se este arquivo estivesse sendo importado por algum outro programa, a comparação `__name__ == '__main__'` resultaria em `False` e a função `main()` não seria executada.
 
-Isto acontece porque quando executamos um arquivo com um programa em `python`, uma variável global de mode `__name__` é definida como `__main__`. Para maiores detalhes, consulte a documentação oficial: [Top-level script environment](https://docs.python.org/3/library/__main__.html).
+Isto acontece porque quando executamos um arquivo com um programa em python, uma variável global de mode `__name__` é definida como `__main__`. Para maiores detalhes, consulte a documentação oficial: [Top-level script environment](https://docs.python.org/3/library/__main__.html).
 
 Podemos observar também, uma ótima oportunidade de melhoria em nosso código. Os métodos `set_range` do multímetro e `output` do calibrador devem receber a informação da unidade utilizada. No entanto, o multímetro entende tensão como 'VOLT' e o calibrador entende como 'V' e melhor seria se os dois métodos pudessem ser utilizados passando apenas 'V' para informar que se trata de tensão elétrica. 
 
@@ -690,8 +690,8 @@ O interessante é que você pode abrir este arquivo com o Excel e trabalhar faci
 
 No entanto, esta solução não é muito robusta, funcionando apenas para este problema. Imagine que se o título das colunas tiver ";" a estrutura do arquivo já estaria comprometida. Para soluções mais robustas, poderíamos utilizar a biblioteca [csv](https://docs.python.org/2/library/csv.html) para desempenhar parte da função.
 
-Finalizamos esta introdução ao Python para a automação de instrumentos. O código completo está disponível neste repositório.
+Finalizamos esta introdução ao Python para a automação de instrumentos. O código completo está disponível neste repositório na pasta projeto.
 
 
-[Top-level script environment](./aautolab.md)
+Próximo: [Software AAutolab](./aautolab.md)
 

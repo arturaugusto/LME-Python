@@ -2,7 +2,7 @@
 
 ## Histórico e Proposta do _software_
 
-O software `AAutolab` foi desenvolvido como uma solução de automação para as situações em que o software Autolab não consegue atender. É desenvolvido utilizando a linguagem `Python`, possuí interface gráfica e integração com o Autolab.
+O software `AAutolab` foi desenvolvido como uma solução de automação para as situações em que o software Autolab não consegue atender. É desenvolvido utilizando a linguagem Python, possui interface gráfica e integração com o Autolab.
 
 ## Iniciando o _software_
 
@@ -30,7 +30,7 @@ Não é necessário selecionas as faixa no AAutolab, pois o software sabe quais 
 
 ## Desenvolvendo _drivers_ e rotinas
 
-A estrutura do AAutolab é semelhante ao projeto que desenvolvemos. O principal forma de expandir o seu uso é por meio do desenvolvimento e testes de _drivers_ e rotinas. Inclusive, o teste é uma fator muito importante, pois não queremos que ao alterar a parte de uma rotina algo supostamente não relacionado pare de funcionar.
+A estrutura do AAutolab é semelhante ao projeto que desenvolvemos. O principal forma de expandir o seu uso é por meio do desenvolvimento de testes, _drivers_ e rotinas. Inclusive, o teste é uma fator muito importante, pois não queremos que ao alterar a parte de uma rotina algo supostamente não relacionado pare de funcionar.
 
 Para desenvolver um novo _driver_, a melhor forme é tomar como referência um semelhante e alterar os comandos. O `KeysightU2000` é um bom começo.
 
@@ -65,3 +65,6 @@ Aqui podemos escrever uma documentação que vai aparecer na tela do software
 ```
 
 No entanto, não altere o código que está na rede. Faça alterações apenas no código em seu computador e depois converse com @arturm para saber como podemos aplicar as alterações em uma nova versão. Vamos utilizar o sistema para controle de versão Git e tentar escrever testes (veja a pasta `tests` para ter uma ideia).
+
+
+Fim do tutorial. Algum conteúdo que foi inicialmente escrito e depois retirado do tutorial e algumas ideias de tópicos para serem abordados futuramente podem ser consultados em [extras](./extras.md).

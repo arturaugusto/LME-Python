@@ -33,3 +33,21 @@ Pressione a tecla `F5`. Um terminal irá aparecer na parte inferior do `VSCode` 
 Esta é a forma mais conveniente de executar o programa. Uma outra forma é digitar no terminal o caminho completo do interpretador `Python` em seguida o caminho do arquivo `teste.py` como demonstrado na imagem:
 
 ![Executando python](./imgs/executaPython.png)
+
+
+## Ideia: Tutorial sobre AutoHotkey
+
+Como utilizar esta linguagem para automatizar tarefas e sua integração com o Python
+
+## Ideia: Curso de digitalização com o multímetro 3458A
+
+Como usar os recursos de digitalização do 3458A e algumas aplicações (Curso desenvolvido para Eletronuclear) 
+
+## Ideia: Tutorial de Arduino
+
+Utilizando o Arduino + Python
+
+## Ideia: Web Scraping + Data mining
+
+Demonstrar o que é feito no robô do ProCal para extrair e-mails e outras informações do Autolab
+

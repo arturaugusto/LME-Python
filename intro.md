@@ -1,8 +1,8 @@
 # Introdução ao Python
 
-O `Python` é uma linguagem de programação de alto nível, como uma sintaxe fácil de ler e escrever. A grande quantidade de funções e bibliotecas de software já existentes para instrumentação e análise numérica tornam esta linguagem tão popular para aplicações de laboratório.
+O Python é uma linguagem de programação de alto nível, como uma sintaxe fácil de ler e escrever. A grande quantidade de funções e bibliotecas de software já existentes para instrumentação e análise numérica tornam esta linguagem tão popular para aplicações de laboratório.
 
-No laboratório o `Python` é utilizado em diversas tarefas:
+No laboratório o Python é utilizado em diversas tarefas:
 
 - Automação de instrumentos
 - Ajuste de instrumentos de alta precisão
@@ -15,13 +15,13 @@ No laboratório o `Python` é utilizado em diversas tarefas:
 
 ## Distribuições Python
 
-Para executar programas feitos na linguagem `Python` é necessário baixar e instalar uma distribuição do interpretador. Para facilitar a compreensão, podemos dizer que o `Python` nada mais é do que um aplicativo que interpreta e executa instruções definidas em um arquivo `.py`, da mesma forma que o `Excel` faz com um arquivo `.xlsm`.
+Para executar programas feitos na linguagem Python é necessário baixar e instalar uma distribuição do interpretador. Para facilitar a compreensão, podemos dizer que o Python nada mais é do que um aplicativo que interpreta e executa instruções definidas em um arquivo `.py`, da mesma forma que o `Excel` faz com um arquivo `.xlsm`.
 
-Para o sistema operacional Windows, as distribuições mais mais conhecidas e suas principais características são descritas abaixo:
+Para o sistema operacional Windows, as distribuições mais conhecidas são:
 
 ### WinPython
 - Site: https://winpython.github.io/
-- Características: Possuí diversas bibliotecas populares preinstaladas. Não precisar ser instalado, basta descompactar um arquivo e executar, o que é uma grande vantagem.
+- Características: Diversas bibliotecas preinstaladas. Não precisar ser instalado, basta descompactar um arquivo e executar, o que é uma grande vantagem.
 
 ### Python oficial
 - Site: https://www.python.org/downloads/windows/
@@ -29,17 +29,17 @@ Para o sistema operacional Windows, as distribuições mais mais conhecidas e su
 
 ### Python Anaconda
 - Site: https://www.anaconda.com/distribution/
-- Características: Possuí diversas bibliotecas populares preinstaladas, portanto o arquivo de instalação é bem grande. Oferece suporte comercial. É utilizada no laboratório, mas está sendo substituída pelo `WinPython` em novos projetos.
+- Características: Diversas bibliotecas preinstaladas, portanto o arquivo de instalação é bem grande. Oferece suporte comercial. É utilizada no laboratório, mas está sendo substituída pelo `WinPython` em novos projetos.
 
-Ao realizar o download das distribuições, você terá a opção de de baixar a versão `32bit` e `64bit`. Para as aplicações do laboratório escolha sempre a `32bit`. A maioria dos _drivers_ utilizados nas placas para a automação de instrumentos são desenvolvidos para `32bit`, tornando a versão `Python` `64bit` incompatível. Os drivers desenvolvidos para `64bis` por sua vez, são compatíveis com o `Python` `32bit`.
+Ao realizar o download das distribuições, você terá a opção de de baixar a versão `32bit` e `64bit`. Para as aplicações do laboratório escolha sempre a `32bit`. A maioria dos _drivers_ utilizados nas placas para a automação de instrumentos são desenvolvidos para `32bit`, tornando a versão Python `64bit` incompatível. Os drivers desenvolvidos para `64bis` por sua vez, são compatíveis com o Python `32bit`.
 
-A distribuição `Python` que será utilizada neste documento está disponível na rede em `I:\LME\AREAS_TECNICAS\AUTOMACAO\WPy` e o seu interpretador pode ser executado diretamente a partir deste diretório. No entanto para uma execução mais rápida, é recomendável fazer uma cópia da versão compactada deste diretório (WPy.zip) e descompacta-lo em `%userprofile%` ou C:\Users\\<seulogin\>. Desta forma a velocidade de acesso ao interpretador do `Python` não irá depender da rede.
+A distribuição Python que será utilizada neste documento é a WinPython e está disponível na rede em `I:\LME\AREAS_TECNICAS\AUTOMACAO\WPy` e o seu interpretador pode ser executado diretamente a partir deste diretório. No entanto para uma execução mais rápida, é recomendável fazer uma cópia da versão compactada deste diretório (WPy.zip) e descompacta-lo em `%userprofile%` ou C:\Users\\<seulogin\>. Desta forma a velocidade de acesso ao interpretador do Python não irá depender da rede.
 
-Após copiar e descompactar os arquivos, abra a pasta e execute o arquivo `WinPython Control Panel.exe`. Em seguida clique em `Advanced`>`Register distribution...` e confirme. Isto irá criar um registro do `Python` no Windows, que será útil para integra-lo ao editor de código.
+Após copiar e descompactar os arquivos, abra a pasta e execute o arquivo `WinPython Control Panel.exe`. Em seguida clique em `Advanced`>`Register distribution...` e confirme. Isto irá criar um registro do Python no Windows, que será útil para integra-lo a um editor de código.
 
 ## Interagindo com o interpretador do Python
 
-Uma boa forma de testar e estudar uma [linguagem interpretada](https://pt.wikipedia.org/wiki/Linguagem_interpretada) como é o caso do `Python` é interagindo com seu interpretador comando por comando no modo [REPL](https://en.wikipedia.org/wiki/Read-eval-print_loop). Neste modo você poderá digitar uma linha de código e obter o resultado imediatamente. 
+Uma boa forma de testar e estudar uma [linguagem interpretada](https://pt.wikipedia.org/wiki/Linguagem_interpretada) como é o caso do Python é interagindo com seu interpretador comando por comando no modo [REPL](https://en.wikipedia.org/wiki/Read-eval-print_loop). Neste modo você poderá digitar uma linha de código e obter o resultado imediatamente. 
 
 Para fazer isto, abra o arquivo `WinPython Interpreter.exe` que está localizado na pasta onde o `WinPython` foi descompactado. 
 
@@ -53,11 +53,11 @@ Caso algum comando seja informado de forma incorreta, o interpretador irá exibi
 
 ## Editor de código
 
-Para editar os script `Python` você precisará de um editor de código. Por ser fácil de usar e rápido, recomendo começar utilizando o editor `Pyzo` que vem com a distribuição `WinPython`.
+Para editar os script Python você precisará de um editor de código. Por ser fácil de usar e rápido, recomendo começar utilizando o editor `Pyzo` que vem com a distribuição `WinPython`.
 
 ### Utilizando o `Pyzo` como editor
 
-Abra o arquivo `Pyzo.exe` que aparece no diretório `WPy`. Em instantes irá aparecer um editor de código, um interpretador e um navegador de diretórios e tudo já estará configurado para que você comece o desenvolvimento de programas em `Python`.
+Abra o arquivo `Pyzo.exe` que aparece no diretório `WPy`. Em instantes irá aparecer um editor de código, um interpretador e um navegador de diretórios e tudo já estará configurado para que você comece o desenvolvimento de programas em Python.
 
 Digite o seguinte código no editor:
 
@@ -73,20 +73,20 @@ Quando o seu código tiver diversas linhas você pode ainda executar apenas linh
 
 ## Pacotes
 
-Uma pacote é um programa que desempenha uma série de funcionalidades que você pode integrar ao seu programa. Uma das maiores qualidades da linguagem `Python` é a vasta biblioteca de pacotes existente.
+Uma pacote é um programa que desempenha uma série de funcionalidades que você pode integrar ao seu programa. Uma das maiores qualidades da linguagem Python é a vasta biblioteca de pacotes existente.
 Um local onde você pode pesquisar por bibliotecas é no site https://pypi.org/. 
 
-A distribuição `Python` disponível para executar os programas do LME já contem todas as bibliotecas necessárias instaladas. Para instalar novos pacotes, podemos utilizar o comando `pip`.
+A distribuição Python disponível para executar os programas do LME já contem todas as bibliotecas necessárias instaladas. Para instalar novos pacotes, podemos utilizar o comando `pip`.
 
 Caso tenha a necessidade de instalar um novo pacote, a forma mais fácil de fazer isto é abrindo o arquivo `WinPython Command Prompt.exe` localizado na pasta onde o `WinPython` foi descompactado e digitar o comando `pip install <nome do pacote>`. Isto irá garantir que o pacote será instalado na distribuição `WinPython`. 
 
-> Note que este *prompt* de comando não é da linguagem `Python` e sim do `MSDOS`.
+> Note que este *prompt* de comando não é da linguagem Python e sim do `MSDOS`.
 
 # Conceitos básicos da linguagem
 
-A seguir serão abordados os conceitos básicos da linguagem `Python` sem pretensão de se aprofundar muito. O objetivo principal é mostrar suas aplicações. Conforme são apresentados, um link com referências estará disponível.
+A seguir serão apresentados os conceitos básicos da linguagem Python. Já existem muitos tutoriais com estes conceitos na internet, portanto para não repeti-los, foi adotada uma abordagem mais próxima de nossas aplicações.
 
-Durante este tópico, é recomendável manter o interpretador do `Python` aberto para testar o que é descrito.
+Durante este tópico, é recomendável manter o interpretador do Python aberto para testar o que é descrito.
 
 ## Variáveis 
 
@@ -101,7 +101,7 @@ print('Temperatura da sala: ', temperatura)
 
 Observe o uso do `print` para mostrar dois valores em uma mesma linha.
 
-Saiba que não podemos utilizar alguns nomes ao definir novas variáveis, pois estes são [reservados](https://www.programiz.com/python-programming/keywords-identifier) pela linguagem `Python`. Os nomes que não podemos utilizar são:
+Saiba que não podemos utilizar alguns nomes ao definir novas variáveis, pois estes são [reservados](https://www.programiz.com/python-programming/keywords-identifier) pela linguagem Python. Os nomes que não podemos utilizar são:
 
 `False` `class` `finally` `is`  `return`
 `None`  `continue`  `for` `lambda`  `try`
@@ -515,4 +515,4 @@ fonte.desliga_sinal()
 ```
 
 
-[Top-level script environment](./projeto.md)
+Próximo: [Desenvolvendo um software de automação](./projeto.md)
