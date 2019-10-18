@@ -94,7 +94,7 @@ Durante este tópico, é recomendável manter o interpretador do Python aberto p
 
 Execute o comando abaixo para atribuir um valor a uma variável e depois exibi-lo na tela:
 
-```Python
+```python
 temperatura = 23
 print('Temperatura da sala: ', temperatura)
 ```
