@@ -74,7 +74,7 @@ Podemos utilizar esta arquitetura através de um pacota para o Python chamado `P
 
 Agora vamos testar o uso da do `VISA` através do Python. Execute o seguinte código:
 
-```Python
+```python
 import visa
 
 rm = visa.ResourceManager()
@@ -85,7 +85,7 @@ dmm.query('*IDN?')
 
 Se você executar linha por linha este código no `IPython`, veremos o seguinte:
 
-```Python
+```python
 import visa
 
 rm = visa.ResourceManager()
@@ -144,7 +144,7 @@ Keysight 34465A
 Tente executar os comandos mostrados na tabela através do `MAX`. Em seguida abra um editor de código de sua escolha (eu utilizei o Pyzo) e faça um pequeno programa para controlar o multímetro utilizando Python. Exemplo:
 
 
-```Python
+```python
 import visa
 
 rm = visa.ResourceManager()
@@ -238,7 +238,7 @@ O método `__init__` deverá receber o argumento `addr` para que seja definido o
 Escreva o código:
 
 
-```Python
+```python
 import visa
 
 rm = visa.ResourceManager()
@@ -274,7 +274,7 @@ O método `idn` não receberá argumento e irá retornar a identificação do ca
 
 Adicione o seguinte código no arquivo:
 
-```Python
+```python
 class Fluke5500(object):
   def __init__(self, addr):
     self.cal = rm.open_resource(addr)
@@ -303,7 +303,7 @@ Este arquivo será responsável por criar os objetos descritos nas classes em `d
 Crie o arquivo `medicao_direta.py` com o seguinte código:
 
 
-```Python
+```python
 from drivers import Fluke5500, Keysight34465A
 
 def main():
@@ -337,7 +337,7 @@ Podemos observar também, uma ótima oportunidade de melhoria em nosso código. 
 Existem diversas formas de implementar esta melhoria, uma forma simples que será apresentada é alterando o método `set_range` da classe `Keysight34465A` no arquivo `instrumentos.py` de forma que o argumento `unidade` seja convertido para 'VOLT' caso seja informado 'V'. O método escrito desta forma fica assim:
 
 
-```Python
+```python
   ...
 
   def set_range(self, unidade, val):
@@ -358,7 +358,7 @@ Para implementar esta melhoria, precisamos primeiro ter uma forma de listar os i
 Para ter uma identificação do tipo de instrumento, vamos criar uma classe base para medidores e outra para fonte. Altere o arquivo `drivers.py` incluindo a definição de duas classes:
 
 
-```Python
+```python
 class DMM(object):
   pass
 
@@ -370,7 +370,7 @@ class Cal(object):
 
 Em seguida, faça uma pequena alteração nas classes `Keysight34465A` e `Fluke5500`, de modo que estas sejam subclasses de `DMM` e `Cal` respectivamente:
 
-```Python
+```python
 class Keysight34465A(DMM):
   ...
 
@@ -380,7 +380,7 @@ class Fluke5500(Cal):
 
 Para obter as opções de multímetros e calibradores (no momento temos apenas um de cada), vamos alterar as primeiras linhas do arquivo `medicao_direta.py` e importar os drivers disponíveis da seguinte forma:
 
-```Python
+```python
 import drivers
 import inspect
 
@@ -429,7 +429,7 @@ No terminal do `Pyzo`, podemos verificar o conteúdo das listas:
 
 Vamos agora desenvolver um forma de solicitar ao usuário que informe qual _driver_ deseja utilizar em nossa rotina de automação. Adicione este código na função `main`:
 
-```Python
+```python
 
   #...
   print('Multímetors disponíveis:')
@@ -448,7 +448,7 @@ Ao executar o loop, será apresentado um número e o nome da classe do _driver_ 
 
 Este código funciona, mas para fazer o mesmo com o calibrador, teríamos que repetir o código. Poderíamos criar uma função da seguinte forma:
 
-```Python
+```python
 def inicia_instrumento(drivers_lista):
   for i, inst_class in enumerate(drivers_lista):
     print(str(i)+': ', inst_class)
@@ -462,7 +462,7 @@ def inicia_instrumento(drivers_lista):
 
 E podemos agora utilizar a função da seguinte forma para iniciar o calibrador e multímetro:
 
-```Python
+```python
 print('Multímetors disponíveis:')
 dmm = inicia_instrumento(drivers_dmm)
 print('Calibradores disponíveis:')
@@ -473,7 +473,7 @@ Ainda com o objetivo de tornar o código mais reutilizável, foi criada a funç�
 
 Aplicando todas as alterações, o código atualizado para o arquivo `medicao_direta.py` fica assim:
 
-```Python
+```python
 import drivers
 import inspect
 
@@ -537,7 +537,7 @@ Agora que temos pronto um mecanismo para iniciar os instrumentos e _drivers_ fun
 
 No momento apenas uma leitura é realizada para valores predefinidos. Vamos alterar a função `main` para que estes requisitos sejam atendidos:
 
-```Python
+```python
 def main():
   drivers_dmm = pega_drivers_para_classe(drivers.DMM)
   drivers_cal = pega_drivers_para_classe(drivers.Cal)
@@ -575,7 +575,7 @@ def main():
 
 Foi novamente utilizada a função `input`, para que o usuário informa os pontos a serem calibrados que serão inicialmente armazenados como uma _string_ separados por vírgula na variável `pontos_calibrados_str`.
 
-```Python
+```python
   pontos_calibrados_str = input('Informe os pontos a serem calibrados separados por vírgula:')
 ```
 
@@ -583,7 +583,7 @@ Foi novamente utilizada a função `input`, para que o usuário informa os ponto
 
 Foi utilizado o método `split` obter uma lista de strings a partir da informação dos pontos, para que através de um loop estes sejam convertidos para `float` e armazenados neste formato na lista `pontos_calibrados_float`.
 
-```Python
+```python
   pontos_calibrados_float = []
   for ponto_str in pontos_calibrados_str.split(','):
     ponto_float = float(ponto_str)
@@ -592,7 +592,7 @@ Foi utilizado o método `split` obter uma lista de strings a partir da informaç
 
 Em seguida iteramos a lista `pontos_calibrados_float` e em cada iteração é definido um dicionário que irá armazenar as listas com as medidas de `VI` e `VC`, ajustar a faixa do multímetro e definir a saída do calibrador. Neste caso, `VC` será igual ao valor do ponto, pois estamos utilizando um calibrador. 
 
-```Python
+```python
   ...
 
   for ponto in pontos_calibrados_float:
@@ -606,7 +606,7 @@ Em seguida iteramos a lista `pontos_calibrados_float` e em cada iteração é de
 
 Existe um outro loop aninhado que é executado 4 vezes, definido por `for n in range(4)`. Neste loop são realizadas 4 leituras no multímetro, que são armazenadas nas listas que existem dentro dos dicionários.
 
-```Python
+```python
     ...
     for n in range(4):
       leitura = dmm.read()
@@ -618,7 +618,7 @@ Existe um outro loop aninhado que é executado 4 vezes, definido por `for n in r
 
 No final de cada ponto, o dicionário contendo os resultados do ponto é armazenada na lista `resultados` e após a calibração de todos os pontos, o calibrador é desligado e os resultados mostrados na tela.
 
-```Python
+```python
     ...
     resultados.append(resultado)
   cal.standby()
@@ -641,7 +641,7 @@ Após a execução do programa, as medidas são armazenadas na lista `resultados
 
 Para isto, no final da função `main` que criamos anteriormente, vamos adicionar o seguinte código para criar um arquivo `.csv` com estas informações:
 
-```Python
+```python
 with open('resultados.csv', 'w') as f:
   f.write('VI 1;VI 2;VI 3;VI 4;VC 1;VC 2;VC 3;VC 4;\n')
   for ponto in resultados:

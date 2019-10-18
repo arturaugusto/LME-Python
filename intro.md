@@ -61,7 +61,7 @@ Abra o arquivo `Pyzo.exe` que aparece no diretório `WPy`. Em instantes irá apa
 
 Digite o seguinte código no editor:
 
-```Python
+```python
 print('Laboratório de Metrologia Elétrica')
 ```
 
@@ -120,7 +120,7 @@ Valores numéricos podem ser inteiros (`int`), ponto flutuante (`float`) ou comp
 
 Execute o código abaixo para definir variáveis com valores numéricos.
 
-```Python
+```python
 tensao_medida = 12.02
 impedancia_medida = 3+4j
 leituras_realizadas = 4
@@ -132,7 +132,7 @@ leituras_realizadas = 4
 
 Uma lista (`list`) representa uma sequencia ordenada de itens. Os itens devem ser separados por virgula e podem ser de tipos diferentes para uma mesma lista.
 
-```Python
+```python
 # Definindo uma lista vazia
 leituras = []
 # Adicionando itens à lista
@@ -161,7 +161,7 @@ leituras[2] = 10.0004 # Alterando um item da lista
 
 Uma Tupla (`tuple`) é semelhante a uma lista, mas após ser criada não pode ser alterada. São definidas utilizando `()` e seus itens são separados por vírgula.
 
-```Python
+```python
 canais_do_osciloscopio = ('ch0', 'ch1', 'ch2', 'ch3')
 # Vamos tentar alterar a tupla. Isto vai gerar um erro
 canais_do_osciloscopio[0] = 'ch4'
@@ -173,7 +173,7 @@ canais_do_osciloscopio[0] = 'ch4'
 
 Strings (`str`) é uma sequencia de caracteres. Utilizamos aspas simples `'...'` ou aspas duplas `"..."` para representa-las. Podemos também utilizar uma sequência de três aspas (`'''` ou `"""`) para definir uma string com múltiplas linhas.
 
-```Python
+```python
 nome_da_faixa = 'Faixa de 0 a 10 mA AC'
 
 ema_da_faixa = """
@@ -191,7 +191,7 @@ print(unidade_da_faixa)
 
 Um Dicionário (`dict`) é uma coleção de valores identificados por um "valor chave". São definidos utilizando `{}`.
 
-```Python
+```python
 # Iniciando um dicionário vazio
 medicao = {}
 # atribuindo valores
@@ -215,7 +215,7 @@ As vezes precisamos que um tipo de variável se comporte como outro tipo. Para i
 
 Execute os comandos abaixo com alguns exemplos:
 
-```Python
+```python
 # Definindo a variável `string_com_numero` contento a representação do número
 string_com_numero = '10.05 '
 # Utilizando a função float para converter uma string em número
@@ -234,7 +234,7 @@ str(numero)
 
 Em algumas situações a conversão numérica pode ocorrer de forma `implícita`. Teste alguns exêmplos:
 
-```Python
+```python
 # A soma abaixo de um inteiro com um float irá resultar em um float
 resultado = 1+1.02
 print(resultado)
@@ -250,7 +250,7 @@ Os tipos de operadores podem ser divididos entre operadores aritméticos, de com
 
 Para uma breve introdução ao uso dos operadores mais comuns, execute os comandos abaixo.
 
-```Python
+```python
 # Assim como na matemática o uso de parênteses altera a precedência dos operadores
 a = (1+2)/3
 b = 1+2/3
@@ -289,7 +289,7 @@ Para isto, podemos utilizar o `if`, `elif` e o `else`.
 
 Execute os comandos abaixo.
 
-```Python
+```python
 leitura = 50
 
 
@@ -318,13 +318,13 @@ Para isto, utilizamos o comando `input`.
 
 O código abaixo mostra uma mensagem solicitando que o técnico informe o código do instrumento e em seguida mostra este código na tela:
 
-```Python
+```python
 codigo_do_instrumento = input('Informa o código do instrumento:')
 print(codigo_do_instrumento)
 ```
 Obs: A entrada o `input` será sempre uma string. Caso queira utilizar como um número, por exemplo, você devera realizar a conversão.
 
-```Python
+```python
 # importa funções matemáticas
 import math
 
@@ -338,7 +338,7 @@ Parte de um código pode ser executado mais de uma vez utilizando instruções d
 
 O loop `for` é utilizado quando você tem uma lista predefinida.
 
-```Python
+```python
 pontos = [2.5, 5, 7.5, 10]
 for ponto in pontos:
   print('Calibrar o ponto de '+ str(ponto) +' V')
@@ -347,7 +347,7 @@ for ponto in pontos:
 
 O loop `while` é utilizado quando você quer executar um trecho de código até que uma condição seja atendia
 
-```Python
+```python
 valor = None
 valores = []
 while valor != 's':
@@ -364,7 +364,7 @@ Permitem que um código seja executado em função de argumentos. É definida pe
 
 No exemplo a seguir, vamos definir uma função que calcula a lei de Ohm tendo como argumentos o valor da resistência e da corrente.
 
-```Python
+```python
 def queda_de_tensao(r, i):
   return r*i
 
@@ -375,7 +375,7 @@ print(v)
 
 Funções podem receber um número indefinido de argumentos utilizando um `*` antes do argumento:
 
-```Python
+```python
 def queda_de_tensao_resistores_serie(i, *r):
   r_total = 0
   for r_val in r:
@@ -391,7 +391,7 @@ print(v)
 
 Podemos também nomear os argumentos utilizando `**`. O argumento irá se comportar como um dicionário:
 
-```Python
+```python
 def queda_de_tensao_divisor(v, **rdiv):
   return v * (rdiv['queda']/(rdiv['carga'] + rdiv['queda']))
 
@@ -411,7 +411,7 @@ A partir dela podemos criar os objetos (ação que é chamada de "instanciar"), 
 
 Observe um exemplo de definição de classe:
 
-```Python
+```python
 class Fonte(object):
 
   def aplica_sinal(self):
@@ -433,7 +433,7 @@ Dentro da definição da classe, as funções que tem `self` como primeiro argum
 
 Vamos agora criar uma classe que estende `Fonte`, permitindo definir a tensão de saída:
 
-```Python
+```python
 class FonteDeTensao(Fonte):
 
   def aplica_sinal(self, valor):
@@ -450,7 +450,7 @@ A definição `class FonteDeTensao(Fonte)` cria uma classe que herda todos os m�
 
 Ao declarar classes, podemos também definir uma função `__init__` que é executada quando o objeto é instanciado. Vamos reescrever a classe definindo uma valos de amplitude inicial:
 
-```Python
+```python
 class FonteDeTensao(Fonte):
   def __init__(self, amplitude = 0):
     self.amplitude = amplitude
@@ -474,7 +474,7 @@ E se quisermos criar uma nova classe que herda todas as características de `Fon
 
 O exemplo abaixo cria uma classe para uma fonte de tensão alternada com base na fonte de tensão mas não inicia explicitamente o valor inicial de amplitude e sim um valor de frequência. O valor da amplitude é definido implicitamente através da função `super`, como mostrado abaixo:
 
-```Python
+```python
 class FonteDeTensaoComFrequencia(FonteDeTensao):
   def __init__(self):
     super().__init__()
@@ -495,7 +495,7 @@ fonte.desliga_sinal()
 
 Podemos também definir qual é a amplitude inicial dos objetos criados pela classe `FonteDeTensaoComFrequencia` definindo o argumento `amplitude` no método `super().__init__`:
 
-```Python
+```python
 class FonteDeTensaoComFrequencia(FonteDeTensao):
   def __init__(self):
     super().__init__(amplitude = 5)

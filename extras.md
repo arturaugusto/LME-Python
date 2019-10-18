@@ -22,7 +22,7 @@ Com o ambiente de desenvolvimento instalado e configurado, vamos escrever um pro
 * Aperte `Ctrl+s` e salve o arquivo no seu desktop com o nome `teste.py`
 * No editor, digite o código abaixo:
 
-```Python
+```python
 print('Laboratório de Metrologia Elétrica')
 ```
 

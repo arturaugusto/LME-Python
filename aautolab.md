@@ -36,7 +36,7 @@ Para desenvolver um novo _driver_, a melhor forme é tomar como referência um s
 
 Para desenvolver uma nova rotina podemos seguir a mesma regra. Um _template_ para a rotina de automação seria uma classe>
 
-```Python
+```python
 class Rotina(RotinaBase):
   """
 #### Descrição
