@@ -51,3 +51,6 @@ Utilizando o Arduino + Python
 
 Demonstrar o que é feito no robô do ProCal para extrair e-mails e outras informações do Autolab
 
+## Ideia: Cálculo de incerteza
+
+Estimando a incerteza por meio da simulação das distribuições de probabilidade utilizando Python
