@@ -73,7 +73,7 @@ Virtual Instrument Software Architecture (`VISA`) é um padrão utilizado para q
 Podemos utilizar esta arquitetura através de um pacota para o Python chamado `PyVISA`. Para instalar o pacote no Python do seu computador, abra o `WinPython Command Prompt.exe` e execute o comando: ```pip install pyvisa```.
 
 > Nos próximos trechos de código, observe que você pode substituir a linha `import visa` por `from visa_mock import visa
-` para simular os instrumentos. Mas antes você deve ter copiado o arquivo `visa_mock.py` no diretório onde está executando os scripts
+` para simular os instrumentos. Mas antes você deve ter copiado o arquivo `visa_mock.py` (https://github.com/arturaugusto/LME-Python/blob/master/visa_mock.py) no diretório onde está executando os scripts
 > Neste modo, todas as leituras do multímetro retornam um número aleatório entre 0 e 1.
 
 Agora vamos testar o uso da do `VISA` através do Python. Execute o seguinte código:
